@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        var yogur = new producto_alimenticio("01", "yogur", "1.5");
+        var manzana = new producto_alimenticio("02", "manzana", "0.5");
+        var fresas = new producto_alimenticio("03", "fresas", "3");
+
+
+
+        var instancias = [yogur, manzana, fresas];
+
+        for (var i = 0; i < instancias.length; i++) {
+            instancias[i].imprimeDatos();
+        }
+
+
+        function producto_alimenticio(codigo, nombre, precio) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
+
+            this.imprimeDatos = function () {
+                document.write(this.nombre + ", " + this.codigo + ", " + this.precio + "<br>");
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+
+</body>
+
+</html>

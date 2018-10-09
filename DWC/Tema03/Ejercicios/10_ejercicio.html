@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang=”es”>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<script type="text/javascript">
+		var data = new Date();
+		var dia = data.getDate();
+		var mes = data.getMonth();
+		switch (parseInt(mes)+1) {
+			case 1:
+				mes = "Enero";
+				break;
+			case 2:
+				mes = "Febrero";
+				break;
+			case 3:
+				mes = "Marzo";
+				break;
+			case 4:
+				mes = "Abril";
+				break;
+			case 5:
+				mes = "Mayo";
+				break;
+			case 6:
+				mes = "Junio";
+				break;
+			case 7:
+				mes = "Julio";
+				break;
+			case 8:
+				mes = "Agosto";
+				break;
+			case 9:
+				mes = "Septiembre";
+				break;
+			case 10:
+				mes = "Octubre";
+				break;
+			case 11:
+				mes = "Noviembre";
+				break;
+			case 12:
+				mes = "Diciembre";
+				break;
+			default:
+				mes = "error";
+				break;
+		}
+		var anio = data.getFullYear();
+		var hora = pad(data.getHours(), 2) + ':' + pad(data.getMinutes(), 2);
+		alert("Hoy es día " + dia + " de " + mes + " de " + anio + " y en estos momentos son las " + hora);
+
+		function pad(num, size) {
+			var s = num + "";
+			while (s.length < size) s = "0" + s;
+			return s;
+		}
+
+	</script>
+
+
+</head>
+
+<body>
+</body>
+
+</html>

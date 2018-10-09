@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Formulario de entrada del dato</title>
+</head>
+
+<body>
+    <form action="ejemplo.php" method="POST">
+        Su nombre: <input type="text" name="nombre" />
+        <br>
+        Su edad: <input type="text" name="edad" />
+        <br>
+        Sexo:
+        <input type="radio" name="sexo" value="M" checked>Mujer
+        <input type="radio" name="sexo" value="H">Hombre
+        <br>
+        Propiedad:
+        <input type="checkbox" name="extras[]" value="garaje" checked>Garaje
+        <input type="checkbox" name="extras[]" value="dragón">Dragon
+        <input type="checkbox" name="extras[]" value="jardin">Jardin
+        <input type="submit">
+        <input type="button" name="actualizar" value="Actualizar datos">
+    </form>
+ </body> </html>

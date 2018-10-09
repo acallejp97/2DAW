@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+
+        var fecha = prompt("Inserte una fecha en formato dd/mm/yyyy");
+        document.write(ordenarFecha(fecha));
+
+        function ordenarFecha(fecha) {
+            var day = fecha.substring(0, fecha.indexOf("/"));
+            var month = fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/"));
+            var year = fecha.substring(fecha.lastIndexOf("/")+1,(fecha.length));
+            var fechaOrdenada = month + "/" + day + "/" + year;
+            return fechaOrdenada;
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

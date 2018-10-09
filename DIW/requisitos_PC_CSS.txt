@@ -1,0 +1,6 @@
+min-height_50xp
+nav, footer, header min-width=80%
+
+div=>whidth = 80%
+article=>width=64%
+aside=>width=34%

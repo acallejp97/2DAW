@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+
+        var fecha = prompt("Inserte una fecha en formato dd/mm/yyyy");
+        var aut = validarFecha(fecha);
+        while (aut != true) {
+            alert("Fecha mal introducida");
+            fecha = prompt("Inserte una fecha en formato dd/mm/yyyy")
+            aut = validarFecha(fecha);
+        }
+        var numeroAnios = prompt("Introduce el numero de años a calcular");
+        var diaSemana = new Date(fechaOrdenada);
+
+        document.write("El dia introducido es el " + diaSemana.getDate() + "de " + mesIntroducido(diaSemana.getMonth()) + " de " + diaSemana.getFullYear());
+
+        if (numeroAnios == "" || numeroAnios == 0) {
+            document.write("No has introducido ningun año a calcular, pulse F5 para volver a intentarlo")
+        } else {
+            for (i = 0; i < numeroAnios; i++) {
+                fechaOrdenada = ordenarFecha(fecha, i);
+                diaSemana = new Date(fechaOrdenada);
+                var nombre;
+                switch (diaSemana.getDay()) {
+                    case 0: nombre = "Domingo"; break;
+                    case 1: nombre = "Lunes"; break;
+                    case 2: nombre = "Martes"; break;
+                    case 3: nombre = "Miercoles"; break;
+                    case 4: nombre = "Jueves"; break;
+                    case 5: nombre = "Viernes"; break;
+                    case 6: nombre = "Sabado"; break;
+                }
+                document.write("El dia de la semana del año " + diaSemana.getFullYear() + " es " + nombre + "<br>");
+
+            }
+        }
+
+        function validarFecha(fecha) {
+            var fechaDividida = fecha.split("/");
+            var month = fechaDividida[1];
+            var day = fechaDividida[0];
+            var year = fechaDividida[2];
+            var maxDias = 31;
+            if (month == 4 || month == 6 || month == 9 || month == 11) maxDias = 30;
+            if (month == 2) {
+                if (year % 4 == 0) maxDias = 29;
+                else maxDias = 28;
+            }
+            if (month > 12 || month < 1) {
+                return false;
+            } else if (day > maxDias || day <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function ordenarFecha(fecha, incrementarAnio) {
+            var fechaDividida = fecha.split("/");
+            var month = fechaDividida[1];
+            var day = fechaDividida[0];
+            var year = fechaDividida[2];
+            year = parseInt(year) + parseInt(incrementarAnio);
+            var fechaOrdenada = month + "/" + day + "/" + year;
+            return fechaOrdenada;
+        }
+
+        function mesIntroducido(fecha) {
+            var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            return meses[fecha];
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
