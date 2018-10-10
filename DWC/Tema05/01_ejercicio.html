@@ -8,36 +8,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         //3 4 6 9 11
-        var colorCuadrado;
-        var colorBody;
-        var cuadrado;
-        var body;
         function cambiarColor(elemento) {
-            cuadrado = document.getElementById(elemento.id);
-            body = document.getElementById("body");
 
-            colorCuadrado = cuadrado.style.backgroundColor;
-            colorBody = body.style.backgroundColor
-
-            cuadrado.style.backgroundColor = colorBody;
-            body.style.backgroundColor = colorCuadrado;
-
-            console.log(colorCuadrado)
+            document.body.style.backgroundColor = getComputedStyle(elemento,null).getPropertyValue("background-color");
         }
 
         function devolverColor(elemento) {
-            cuadrado.style.backgroundColor = colorCuadrado;
-            body.style.backgroundColor = colorBody;
+            document.body.style.backgroundColor = "white";
         }
 
     </script>
     <style>
-        div {
+        #cuadrado1 {
             padding: 2%;
             width: 10em;
             height: 10em;
             display: inline-block;
             background-color: red;
+        }
+        #cuadrado2 {
+            padding: 2%;
+            width: 10em;
+            height: 10em;
+            display: inline-block;
+            background-color: blue;
+        }
+        #cuadrado3 {
+            padding: 2%;
+            width: 10em;
+            height: 10em;
+            display: inline-block;
+            background-color: orange;
+        }
+        #cuadrado4 {
+            padding: 2%;
+            width: 10em;
+            height: 10em;
+            display: inline-block;
+            background-color: yellow;
+        }
+        #cuadrado5 {
+            padding: 2%;
+            width: 10em;
+            height: 10em;
+            display: inline-block;
+            background-color: green;
         }
     </style>
 </head>
