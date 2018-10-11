@@ -21,7 +21,8 @@ header {
   text-align: center;
 }
 
-header {
+header,
+footer {
   background-color: red;
 }
 
@@ -64,15 +65,11 @@ aside {
   background-color: peru;
   border-radius: 5px;
   color: white;
-  margin-top: 1%;
   font-size: 20px;
+  margin-top: 1%;
   line-height: 150px;
   min-height: 300px;
-  min-width: 100%;
+  min-width: 34%;
   text-align: center;
   vertical-align: top;
-}
-
-footer{
-    display: hidden;
 }
