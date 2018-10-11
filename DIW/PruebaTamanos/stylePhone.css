@@ -13,7 +13,7 @@ footer,
 header {
   border-radius: 5px;
   color: white;
-  font-size: 20px;
+  font-size: 1.172em;
   line-height: 50px;
   margin: 5px auto;
   min-height: 50px;
@@ -37,35 +37,35 @@ div #contenido {
   min-width: 80%;
 }
 
-article {
-  background-color: gray;
+article,
+section {
   border-radius: 5px;
   color: white;
-  font-size: 20px;
-  line-height: 50px;
-  min-height: 300px;
-  min-width: 64%;
   text-align: center;
+  line-height: 50px;
+}
+
+article {
+  background-color: gray;
+  min-height: 300px;
+  font-size: 0.703em;
+  min-width: 64%;
   vertical-align: top;
 }
 
 section {
+  font-size: 0.703rem;
   background-color: cadetblue;
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  line-height: 50px;
   margin: auto;
   min-height: 200px;
   min-width: 90%;
-  text-align: center;
 }
 
 aside {
   background-color: peru;
   border-radius: 5px;
   color: white;
-  font-size: 20px;
+  font-size: 0.469em;
   margin-top: 1%;
   line-height: 150px;
   min-height: 300px;

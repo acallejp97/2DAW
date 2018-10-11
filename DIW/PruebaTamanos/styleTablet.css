@@ -14,7 +14,7 @@ header {
   border-radius: 5px;
   color: white;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 1.953em;
   margin: 5px auto;
   min-height: 50px;
   min-width: 80%;
@@ -36,28 +36,29 @@ div #contenido {
   min-width: 80%;
 }
 
-article {
-  background-color: gray;
+article,
+section {
   border-radius: 5px;
   color: white;
-  font-size: 20px;
+  text-align: center;
   line-height: 50px;
+
+}
+
+article {
+  font-size: 1.172rem;
+  background-color: gray;
   min-height: 300px;
   min-width: 64%;
-  text-align: center;
   vertical-align: top;
 }
 
 section {
   background-color: cadetblue;
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 1.172rem;
   margin: auto;
   min-height: 200px;
   min-width: 90%;
-  text-align: center;
 }
 
 aside {
@@ -65,7 +66,7 @@ aside {
   border-radius: 5px;
   color: white;
   margin-top: 1%;
-  font-size: 20px;
+  font-size: 0.781em;
   line-height: 150px;
   min-height: 300px;
   min-width: 100%;
@@ -73,6 +74,6 @@ aside {
   vertical-align: top;
 }
 
-footer{
-    display: hidden;
+footer {
+  display: hidden;
 }
