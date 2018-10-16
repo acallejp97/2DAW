@@ -14,7 +14,8 @@ header {
   border-radius: 5px;
   color: white;
   font-size: 20px;
-  line-height: 1.953em;
+  line-height:50px; 
+  font-size:1.953em;
   margin: 5px auto;
   min-height: 50px;
   min-width: 80%;

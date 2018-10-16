@@ -1,0 +1,43 @@
+
+body {
+  padding: 2em; 
+}
+
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  background: tomato;
+}
+
+.nav {
+  background: grey;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.section {
+  background: gold;
+}
+
+.aside {
+  background: hotpink;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+
