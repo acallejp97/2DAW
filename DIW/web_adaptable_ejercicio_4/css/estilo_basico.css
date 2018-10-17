@@ -1,10 +1,9 @@
-
 body {
-  padding: 2em; 
+  padding: 2em;
 }
 
 .wrapper {
-  display: flex;  
+  display: flex;
   flex-flow: row wrap;
   font-weight: bold;
   text-align: center;
@@ -16,28 +15,53 @@ body {
 }
 
 .header {
-  background: tomato;
+  background-color: tomato;
+}
+
+.ul {
+  display: flex;
+  color: transparent;
+  margin-left: 70%;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+}
+
+li > a:link {
+  color: white;
+  padding: 2.5px;
+  margin: 2.5px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+li > a:hover {
+  padding: 5px;
+  margin: 5px;
+  font-style: normal;
+  text-decoration: none;
+  background-color: blue;
 }
 
 .nav {
-  background: grey;
+  background-color: deepskyblue;
 }
 
 .main {
   text-align: left;
-  background: deepskyblue;
+  background-color: grey;
 }
 
 .section {
-  background: gold;
+  background-color: gold;
 }
 
 .aside {
-  background: hotpink;
+  background-color: hotpink;
 }
 
 .footer {
-  background: lightgreen;
+  background-color: lightgreen;
 }
-
-
