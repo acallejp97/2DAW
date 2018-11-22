@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <h1>EXAMEN</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="estiloexamen.css" />
+
+</head>
+
+<body>
+    <form action="preguntas.php" method="POST">
+        <h2>Datos alumno</h2><br>
+        <p>Escriba los datos siguientes</p>
+        <table>
+            <tr>
+                <td>Nombre : </td>
+                <td><input type="text" name="nombre" /></td>
+            </tr>
+            <tr>
+                <td>Apellidos</td>
+                <td><input type="text" name="apellidos" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="curso">
+                        <option value="Primero">Primero</option>
+                        <option value="Segundo">Segundo</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" name="enviar" value="Enviar">
+        <input type="reset" name="borrar" value="Borrar">
+
+        <p>Pagina del examen de acceso <br> Introduce nombre y apellidos alumno <br> Seleccione el curso del que
+            quieras hacer el examen</p>
+
+
+    </form>
+</body>
+
+</html>

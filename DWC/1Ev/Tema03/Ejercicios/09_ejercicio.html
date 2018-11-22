@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang=”es”>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<script type="text/javascript">
+		var seleccion = prompt("1. Redondeo a su inmediato superior de un número\n" +
+			"2. Redondeo a su inmediato inferior de un número\n" +
+			"3. Redondeo al número más cercano\n" +
+			"4. Cálculo del número máximo entre dos dados\n" +
+			"5. Cálculo del número mínimo entre dos dados\n" +
+			"6. Cálculo de un número elevado a otro\n" +
+			"7. Cálculo de la raiz cuadrada de un número\n", "");
+
+		switch (parseInt(seleccion)) {
+			case 1:
+				var numero = prompt('Ponga el numero');
+				alert(Math.ceil(numero));
+				break;
+
+			case 2:
+				var numero = prompt('Ponga el numero', '');
+				alert(Math.floor(numero));
+				break;
+
+			case 3:
+				var numero = prompt('Ponga el numero', '');
+				alert(Math.round(numero));
+				break;
+
+			case 4:
+				var n1 = Math.floor((Math.random() * 6) + 1)
+				alert(n1);
+				var n2 = Math.floor((Math.random() * 6) + 1)
+				alert(n2);
+				alert(Math.max(n1, n2));
+				break;
+
+			case 5:
+				var n1 = Math.floor((Math.random() * 6) + 1)
+				alert(n1);
+				var n2 = Math.floor((Math.random() * 6) + 1)
+				alert(n2);
+				alert(Math.min(n1, n2));
+				break;
+
+			case 6:
+				var numero1 = prompt('Ponga el numero', '');
+				var numero2 = prompt('Ponga el numero', '');
+				alert(Math.pow(numero1, numero2));
+				break;
+
+			case 7:
+				var numero = prompt('Ponga el numero', '');
+				alert(Math.sqrt(numero));
+				break;
+
+			default:
+				alert('Pulse F5 y vuelva a intentarlo xd');
+				break;
+		}
+	</script>
+
+</head>
+
+<body>
+</body>
+
+</html>

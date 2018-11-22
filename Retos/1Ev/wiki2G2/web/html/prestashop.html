@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prestashop</title>
+	<link rel="stylesheet" href="../css/estilo2.css">
+</head>
+
+<body>
+	<div id="contenedor">
+		<article>
+			<h1>¿Qué es Prestashop?</h1>
+			<p>PrestaShop es una plataforma de carrito de compras gratuita que permite a pequeñas y grandes empresas crear y
+				gestionar una tienda en línea.</p>
+			<p>Se trata de un gestor de contenidos dinámico pensado para construir desde cero tiendas con software 100%
+				gratuito, que además puede ser alimentado con temas y módulos gratuitos o desarrollados por profesionales bajo
+				licencias comerciales.</p>
+
+			<h1> Características generales de PrestaShop</h1>
+			<p>
+				Algunas de sus caracteristicas son:
+				<ul>
+					<li>Administrar un gran catálogo de productos. No importa si tu tienda online tiene diez o mil artículos. La
+						interfaz de administración te permitirá crear un inventario de productos que podrás actualizarlo de manera muy
+						sencilla.</li>
+					<li>Visualizar productos y plantear diferentes opciones a tus clientes, tales como, comparar artículos, crear
+						listas de regalo, guardar en favoritos, reseñas de los clientes, etc.</li>
+					</li>Administrar tu tienda online desde un mismo lugar. Los usuarios de Prestashop destacan el diseño intuitivo de
+					la plataforma. Esta la convierte en una herramienta perfecta para personalizar imágenes, crear formularios de
+					contacto, mostrar los productos más vendidos, indicar las formas de pago disponibles, etc.</li>
+					<li>Optimizar la página para los motores de búsqueda. Con este CMS podrás asegurarte de que tu tienda está
+						correctamente posicionada en Internet. Prestashop tiene la opción de insertar enlaces permanentes, descripciones
+						de productos, reducir el tiempo de carga de los artículos, cumplir con los estándares de la W3C</li>
+				</ul>
+
+			</p>
+
+			<h1>Requisitos para instalar Prestashop</h1>
+			<p>Para trabajar de manera local con Prestashop necesitas:
+				<ol>
+					<li>Sistema operativo Mac, Windows o Linux.</li>
+					<li>Paquetes de servicios como Wamp o Xampp. O en su defecto tener configurado en el PC los servidores web Apache
+						1.3 o 2.x, Nginx o Microsoft IIS.</li>
+					<li>Procesador de texto PHP 5.1 o superior.</li>
+					<li>Disponer de la base MySQL 5.0 o superior.</li>
+				</ol>
+			</p>
+			<h1>Como se instala Prestashop</h1>
+			<p>
+				Lo primero de todo es meternos a la terminal de nuestro contenedor y ejecutaremos los siguientes comandos para
+				instalar Apache y MariaDB. Esto tenemos que hacerlo para luego poder instalar el resto de las cosas (OwnCloud,
+				Prestashop y WordPres)
+			</p>
+			<pre>
+            	apt-get install apache2
+                service apache2 status
+            </pre>
+			<p> Vemos si sale running</p>
+			<pre>
+                apt-get install mariadb-server mariadb-client
+                service mysql status
+                /usr/bin/mysql_secure_installation
+            </pre>
+			<img class="imagenes" src="../imagenes/Prestashop/Prestashop1.png">
+			<p>
+				Durante la instalación del Gestor de Bases de Datos MariaDB tendremos que seguir los siguientes pasos
+				<ol>
+					<li>En el primer paso nos preguntará por la contraseña de “root” para MariaDB, pulsaremos la tecla enter ya que no
+						hay contraseña definida.</li>
+					<li>Después nos preguntará si queremos asignar una contraseña para el usuario “root”. Es recomendable usar
+						contraseña.</li>
+					<li>Seguidamente nos preguntará si queremos eliminar usuario anónimo, aquí indicaremos que Sí queremos borrar los
+						datos.</li>
+					<li>Mäs adelante nos preguntará si queremos desactivar que el usuario “root” se conecte remotamente, aquí
+						indicaremos que Sí queremos desactivar acceso remoto para usuario “root”.</li>
+					<li>El siguiente paso nos preguntará si queremos eliminar la base de datos “test”, aquí indicaremos que Sí
+						queremos borrar las base de datos “test”.</li>
+					<li>En el ultimo paso nos preguntará si queremos recargar privilegios, aquí indicaremos que Sí</li>
+				</ol>
+			</p>
+			<img class="imagenes" src="../imagenes/Prestashop/Prestashop2.png">
+			<p>Una vez hecho lo anterior podemos empezar la instalación de Prestashop como tal. Para ello tenemos que crear un
+				repositorio para poder descargar e instalar el PHP. Luego reiniciamos el servidor. Para ello ejecutamos los
+				siguientes comandos.</p>
+			<pre>
+            	a2enmod rewrite
+				add-apt-repository universe
+				apt-get install php libapache2-mod-php php-cli php-mysql php-zip php-ldap php-curl php-gd php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-intl curl
+            </pre>
+			<p>
+				Una vez hecho esto abrimos el SGDB y creamos una Base de Datos y un usuario para Prestashop
+			</p>
+			<pre>
+            	# mysql -u root
+				CREATE DATABASE prestashop;
+				CREATE USER 'prestashop' IDENTIFIED BY 'grupo2';
+				GRANT ALL PRIVILEGES ON prestashop.* TO 'prestashop';
+				quit
+            </pre>
+			<img class="imagenes" src="../imagenes/Prestashop/Prestashop3.png">
+			<p>Por ultimo instalamos el Prestashop y para ello descargamos, descomprimimos y cambiamos los permisos de ejecución
+				del PrestaShop</p>
+			<pre>
+            	cd /var/www/html
+                rm index.html
+                wget https://download.prestashop.com/download/releases/prestashop_1.7.1.1.zip
+                unzip prestashop_1.7.1.1.zip
+                chown -R 777 a todos los archivos que tenemos en la carpeta
+               chown www-data: /var/www/html/prestashop/
+            </pre>
+			<p>
+				Por ultimo vamos a la ip del servidor y empezamos con la instalacion.
+				<br>
+				Hecho toda la instalacion, desde la terminal del contenedor borraremos la carpeta install
+			</p>
+
+			<video id="video" autobuffer autoloop loop controls>
+				<source src="../videos/prestashop.mp4">
+				<object type="video/ogg" data="../videos/prestashop.mp4">
+					<param name="src" value="../videos/prestashop.mp4">
+					<param name="autoplay" value="false">
+					<param name="autoStart" value="0">
+					<p><a href="../videos/prestashop.mp4">Download this video file.</a></p>
+				</object>
+			</video>
+		</article>
+	</div>
+</body>
+
+</html>

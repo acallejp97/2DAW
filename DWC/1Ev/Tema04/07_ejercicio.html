@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var nombres = [];
+        var edad = [];
+        for (var i = 0; i < 6; i++) {
+            nombres[i] = prompt("Introduzca el nombre numero " + (i + 1));
+            edad[i] = prompt("Introduzca la edad de " + nombres[i]);
+        }
+
+        for (var i = 0; i < nombres.length; i++) {
+            document.writeln(nombres[i] + ":" + edad[i]);
+        }
+
+        var suma = 0;
+        for (var i = 0; i < edad.length; i++) {
+            suma += parseInt(edad[i]);
+        }
+        var edadMedia = suma / edad.length;
+
+        document.writeln("Edad media: " + edadMedia);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

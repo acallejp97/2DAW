@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Configuración de Proxmox VE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/estilo2.css" />
+</head>
+
+<body>
+  <section>
+    <h1>Configuración del Servidor</h1>
+    <article id="necProx">
+
+      <div>
+        <h3>
+          ¿Que necesitamos para instalar el Proxmox?
+        </h3>
+        <p>Lo primero de todo es tener el microservidor, en este caso usamos un HP ProLiant MicroServer Gen8
+          <img id="imagen1" src="../imagenes/microserver.jpg" alt="microserver" height="120" width="140">
+          A parte de este, necesitaremos un monitor con entrada VGA. En caso de no disponer de esta, podremos usar un
+          adaptador de entrada. Tambien necesitaremos un ratón y un teclado para poder movernos a traves de las
+          opciones que nos da el servidor. Y para poder instalar el sistema
+          operativo crearemos un USB booteable.
+        </p>
+      </div>
+    </article>
+    <article id="creoUsb">
+      <div>
+        <h3>¿Como creamos un USB booteable?</h3>
+        <p>Para crear el USB de este sistema operativo no podemos crearlo con RUFUS o UNetbooting, ya que estos
+          programas dan errores. Para ello lo que haremos será primero de todo hacernos con un USB
+          en formato fat32 vacio con al menos un GB de memoria.</p>
+      </div>
+    </article>
+    <article id="instalacion">
+      <div>
+        <h3>Instalacion en Linux:</h3>
+        <p>Mediante la terminal de linux usaremos los siguientes comandos: lsblk- Con este comando encontraremos el
+          nombre y la ubicacion de nuestro USB.
+          <em> dd if=proxmox-ve_*.iso of=[Aqui ponemos la direccion del usb que hemos visto que es a traves de</em>
+          <em>lsblk] bs=1M</em>
+        </p>
+      </div>
+      <br>
+      <div>
+        <h3>Instalacion en Windows:</h3>
+        <p>Nos descargamos Etcher y seguimos sus instrucciones. En caso de que este no funcione usaremos OSForensics</p>
+      </div>
+    </article>
+    <article id="confServ">
+      <div>
+        <h3>Configurar MicroServidor para instalacion:</h3>
+        <img id="imagen2" src="../imagenes/bios.png" alt="bios" height="120" width="140">
+        <p> Para empezar conectaremos todos los perifericos al microservidor, el cual estará conectado a
+          una entrada de red a traves del RJ45.
+          Una vez encendido, esperaremos a que aparezca la opcion de entrar a la BIOS desde el F9. Pondrá
+          SETUP.
+        </p>
+        <br>
+      </div>
+      <div>
+        <img id="imagen4" src="../imagenes/intelvirtualization.png" alt="intelvirtualziation" height="120" width="140">
+        <p> Una vez dentro de la BIOS, accedemos a <em>AdvancedOptions -> VirtualInstallDisk-> Enabled</em></p><br>
+      </div>
+      <div>
+
+        <p>Hecho esto, nos dirigiremos desde el menu principal de la BIOS a <em>SystemOptions->
+            ProcessorOptions->IntelVirtualizationTechnology->Enabled</em></p><br>
+      </div>
+      <div>
+        <p>Asegurarnos tambien que estemos en Legacy Mode.</p>
+        <img id="imagen5" src="../imagenes/satalegacy.png" alt="satalegacy" height="120" width="140">
+      </div>
+      <div>
+        <p>Seleccionamos el arranque para que arranque de primeras desde el USB.
+          Seleccionamos la opcion de proxmox e iniciamos el programa de instalacion.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+﻿Lo primero de todo es meternos a la terminal de nuestro contenedor. 
+meteremos los siguientes comandos
+
+apt-get install apache2
+service apache2 status
+Vemos si sale running
+apt-get install mariadb-server mariadb-client
+service mysql status
+/usr/bin/mysql_secure_installation
+
+En el primer paso nos preguntará por la contraseña de “root” para MariaDB, pulsaremos la tecla enter ya que no hay contraseña definida.
+Después nos preguntará si queremos asignar una contraseña para el usuario “root”. Es recomendable usar contraseña.
+Seguidamente nos preguntará si queremos eliminar usuario anónimo, aquí indicaremos que Sí queremos borrar los datos.
+Mäs adelante nos preguntará si queremos desactivar que el usuario “root” se conecte remotamente, aquí indicaremos que Sí queremos desactivar acceso remoto para usuario “root”.
+El siguiente paso nos preguntará si queremos eliminar la base de datos “test”, aquí indicaremos que Sí queremos borrar las base de datos “test”.
+En el ultimo paso nos preguntará si queremos recargar privilegios, aquí indicaremos que Sí.
+
+
+a2enmod rewrite
+
+Añandimos el repositorio universe en caso de que no lo tengamos e instalamos php
+
+add-apt-repository universe
+
+apt-get install php libapache2-mod-php php-cli php-mysql php-zip php-ldap php-curl php-gd php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-intl curl
+
+reiniciamos el apache para activar los datos nuevos
+
+service apache2 restart
+
+Abrimos la base de datos y creamos una base de datos y un usuario para prestashop
+
+# mysql -u root
+
+CREATE DATABASE prestashop;
+CREATE USER 'prestashop' IDENTIFIED BY 'grupo2';
+GRANT ALL PRIVILEGES ON prestashop.* TO 'prestashop';
+quit
+
+Instalacion prestashop
+
+cd /var/www/html
+rm index.html
+wget https://download.prestashop.com/download/releases/prestashop_1.7.1.1.zip
+unzip prestashop_1.7.1.1.zip
+chown -R 777 a todos los archivos que tenemos en la carpeta
+chown www-data: /var/www/html/prestashop/
+
+vamos a la ip del servidor y empezamos con la instalacion
+
+Hecho toda la instalacion, desde la terminal del contenedor borraremos la carpeta install
+
+
+
+usuario: grupo2@grupo2.com
+contraseña: grupo2grupo2

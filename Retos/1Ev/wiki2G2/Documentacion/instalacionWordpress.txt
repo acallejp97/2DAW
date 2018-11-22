@@ -1,0 +1,25 @@
+Instalar mariadb y php
+
+Desde la terminal de nuestro servidor meteremos el siguiente comando:
+cd /var/www/html
+
+Luego nos descargaremos el paquete de instalacion de wordpress. Para ello  ingresaremos el siguiente comando:
+wget https://wordpress.org/versionactual.tar.gz
+
+una vez lo tengamos lo descomprimimos con:
+tar -xzvf versionactual.tar.gz
+
+abrimos la base de datos con:
+mysql -u root 
+
+y crearemos bases de datos y usuarios. Para ello meteremos los siguientes comandos:
+
+CREATE DATABASE wordpress;
+CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'grupo2';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost IDENTIFIED BY 'grupo2;
+FLUSH PRIVILEGES;
+EXIT;
+
+abrimos el archivo wp-config.php y en el rellenaremos los datos para acceder a la base de datos.
+
+Con todo esto hecho, accederemos a la direccion donde hayamos descomprimido la carpeta e iniciaremos con el proceso de instalacion desde la web

@@ -1,0 +1,21 @@
+<HEAD>
+    <Script language="JavaScript">
+        function checkCheckBox(f) {
+            If(f.agree.checked == False)
+            {
+                alert('Por favor Aceptar antes de Continuar.');
+                return false;
+            } Else
+            return true;
+        }
+    </Script>
+</HEAD>
+
+<body>
+    <form action="/tu_pagina.html" method="POST" onsubmit="return checkCheckBox(this)">
+        <font color="#990000">Aceptas las condiciones?: si</font>
+        <input Type="checkbox" value="0" name="agree" />
+        <input Type="submit" value="Aceptar" />
+        <input Type="button" value="salir" onclick="document.location.href='/index.html';" />
+    </form>
+</body>

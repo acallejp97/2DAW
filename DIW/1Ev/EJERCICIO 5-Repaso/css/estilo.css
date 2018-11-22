@@ -1,0 +1,51 @@
+.contenedor {
+  width: 80%;
+  margin: auto;
+}
+
+/* Imagen */
+#logoTxurdi {
+  width: 13%;
+  margin: 1%;
+}
+
+nav {
+  float: right;
+}
+
+header {
+  background-color: salmon;
+}
+
+/* Menu */
+#menu {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  margin-right: 0.7em;
+}
+
+li {
+  float: right;
+  margin-bottom: 1em;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.85em;
+  text-decoration: none;
+  border-radius: 0.7em;
+  border-style: solid;
+  border-color: black;
+}
+
+a {
+  background-color: #333333;
+}
+
+/*Pagina web*/
+html {
+  background-color: darkgrey;
+}

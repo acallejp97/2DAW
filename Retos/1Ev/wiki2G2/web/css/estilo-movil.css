@@ -1,0 +1,123 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  height: 100%;
+  background-image: url("../imagenes/fondoWeb.jpg");
+  min-width: 335px;
+}
+
+#contenedor {
+  height: 100%;
+  min-width: 80%;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 1%;
+}
+
+nav {
+  border: 2px black solid;
+  min-height: 75px;
+  max-height: 150px;
+  background: tomato;
+  border-radius: 1em;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  background-image: url("../imagenes/fondoNav.jpg");
+  box-shadow: 18px 15px 40px #888888;
+}
+
+#navegacion ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1em;
+  padding-top: 15px;
+}
+
+/*Hacemos que los elementos aparezca en horizontal*/
+ul li {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin: auto;
+}
+
+/*Hacemos que las imagenes del navegador se centren*/
+ul {
+  padding-left: 11%;
+}
+
+.enlaces {
+  width: 5%;
+  height: 3%;
+  border-radius: 50%;
+  padding: 1%;
+  -o-transition: border-radius 0.5s ease; /* Para Opera */
+  -ms-transition: border-radius 0.5s ease; /* Para IE */
+  -moz-transition: border-radius 0.5s ease; /* Para Firefox */
+  -webkit-transition: border-radius 0.5s ease; /* Para Chrome y Safari */
+  -o-transition: transform 0.5s ease; /* Para Opera */
+  -ms-transition: transform 0.5s ease; /* Para IE */
+  -moz-transition: transform 0.5s ease; /* Para Firefox */
+  -webkit-transition: transform 0.5s ease; /* Para Chrome y Safari */
+}
+
+#icono2 {
+  flex: 1;
+  order: 2;
+  width: 20%;
+  height: 70%;
+}
+
+#icono3 {
+  flex: 1;
+  order: 3;
+  width: 20%;
+  height: 70%;
+}
+
+#icono4 {
+  flex: 1;
+  order: 4;
+  width: 20%;
+  height: 70%;
+}
+
+.enlaces:hover {
+  background: peachpuff;
+  border-radius: 2%;
+  transform: rotate(180deg);
+}
+
+#iframe {
+  border-radius: 10%;
+  height: 800px;
+}
+
+#frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+}
+
+footer {
+  background: hotpink;
+  min-height: 100px;
+  max-height: 200px;
+  border-radius: 1em;
+  border: 2px black solid;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-image: url("../imagenes/fondoNav.jpg");
+  box-shadow: 18px 15px 18px black;
+  line-height: 100px;
+}
+
+#titulo-pie {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  min-width: 335px;
+}

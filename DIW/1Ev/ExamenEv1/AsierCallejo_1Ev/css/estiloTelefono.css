@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 85%;
+
+}
+
+.contenedor {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+#logoTxurdi {
+  width: 50%;
+  margin: 1%;
+}
+
+#menu {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  margin-right: 0.7em;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 0.7em;
+  border-style: solid;
+  border-width: 0.2em;
+  border-color: black;
+}
+
+li a:hover {
+  color: white;
+}
+
+a {
+  background-color: dodgerblue;
+}
+
+section#section,
+aside {
+  display: inline-block;
+  max-width: 80em;
+  min-height: 16em;
+  text-align: center;
+  vertical-align: top;
+  width: 65%;
+  flex: 1 1 31em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#texto {
+  text-align: center;
+}
+
+section {
+  display: block;
+}
+
+section#texto {
+  display: flex;
+  margin: auto;
+  max-width: 80em;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#columna1 {
+  column-span: all;
+  background-color: grey;
+}
+
+#columna2 {
+  column-span: all;
+  background-color: darkgray;
+}
+
+#imagenAside {
+  position: center;
+}
+
+#aside {
+  column-span: all;
+  background-color: salmon;
+  flex: 1 1 16em;
+  padding: 0.3em;
+}
+
+.video {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+#footer {
+  background-color: dodgerblue;
+  padding: 1em;
+  margin:1em;
+}

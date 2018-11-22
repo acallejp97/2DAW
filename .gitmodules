@@ -1,9 +1,9 @@
-[submodule "Retos/RetoBlogG1"]
-	path = Retos/RetoBlogG1
+[submodule "Retos/1Ev/RetoBlogG1"]
+	path = Retos/1Ev/RetoBlogG1
 	url = https://github.com/acallejp97/RetoBlogG1.git
-[submodule "Retos/wiki2G2"]
-	path = Retos/wiki2G2
+[submodule "Retos/1Ev/wiki2G2"]
+	path = Retos/1Ev/wiki2G2
 	url = https://github.com/beorn57/wiki2G2.git
-[submodule "Retos/wikiG2"]
-	path = Retos/wikiG2
+[submodule "Retos/1Ev/wikiG2"]
+	path = Retos/1Ev/wikiG2
 	url = https://github.com/acallejp97/wikiG2.git

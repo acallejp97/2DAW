@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WordPress</title>
+	<link rel="stylesheet" href="../css/estilo2.css">
+</head>
+
+<body>
+	<div id="contenedor">
+		<article>
+			<p>Para empezar descargaremos wordpress en el servidor. Para ello metemos el siguiente comando: </p>
+			<pre>
+	wget https://wordpress.org/versionactual.tar.gz /var/www/html
+			</pre>
+			<p>De esta manera descargaremos el zip en la carpeta html que es en la cual trabajaremos ahora.</p>
+			<p>Una vez nos hayamos movido de esta carpeta lo que haremos será descomprimir el archivo mediante el comando </p>
+			<pre>
+	tar -xzvf versionactual.tar.gz
+			</pre>
+			<br>
+			<p>Ahora crearemos una base de datos para nuestro wordpress la cual almacenará todos los datos de nuestra pagina
+				web, para ello introducimos los siguientes comandos:</p>
+			<pre>
+	mysql -u root 
+
+	CREATE DATABASE wordpress;
+	CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'grupo2';
+	GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost IDENTIFIED BY 'grupo2;
+	FLUSH PRIVILEGES;
+	EXIT;
+			</pre>
+			<p>Una vez hayamos creado la base de datos, lo que tendremos que hacer será preparar el entorno para poder instalar
+				la pagia web. Para ello nos moveremos a la carpeta /var/www/html/wordpress y renombraremos el archivo
+				wp-config-sample.php a wp-config.php. Luego lo editaremos y rellenaremos los campos con los datos correspondientes
+				a la base de datos.</p>
+
+			<p>Ya terminado con esto, iremos a la IP del servidor y empezaremos con la instalacion de wordpress</p>
+
+		</article>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var precio = prompt("Inserte el precio del producto");
+var iva = prompt("Inserte el IVA del producto");
+
+precioIVA(precio,iva);
+
+function precioIVA(precio, iva){
+    document.write("El precio es de " + (parseInt(precio) + ((iva*precio)/100)));
+}
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

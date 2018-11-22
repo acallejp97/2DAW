@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Owncloud</title>
+	<link rel="stylesheet" href="../css/estilo2.css">
+</head>
+
+<body>
+	<div id="contenedor">
+		<article>
+			<h1>Que es owncloud</h1>
+			<br>
+			<p>OwnCloud es un sistema para almacenar archivos y servicios en la nube (a través de Internet) que implementa
+				medidas de seguridad suficientes para mantener a salvo los documentos de una organización. Se trata de un software
+				instalado en un servidor al que se accede mediante un navegador web o a través de un programa instalado en nuestro
+				escritorio denominado cliente ownCloud.</p>
+
+			<br>
+			<h3>Instalacion</h3>
+			<p>Metemos desde la terminal del proxmox los siguientes comandos:<br>
+				<pre>
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt-get update
+				
+	sudo apt-get install -y apache2 mariadb-server libapache2-mod-php7.2
+		&nbsp;&nbsp;&nbsp;&nbsp;openssl php-imagick php7.2-common php7.2-curl php7.2-gd
+		&nbsp;&nbsp;&nbsp;&nbsp;php7.2-imap php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring
+		&nbsp;&nbsp;&nbsp;&nbsp;php7.2-mysql php7.2-pgsql php-smbclient php-ssh2
+		&nbsp;&nbsp;&nbsp;&nbsp;php7.2-sqlite3 php7.2-xml php7.2-zip</pre>
+			</p>
+			<br>
+			<br>
+			<h3>Configuramos el apache:</h3>
+			<br>
+			<p>Para ello, lo que haremos será crear y editar el siguiente archivo:</p>
+			<br>
+			<pre>nano /etc/apache2/sites-available/owncloud.conf</pre>
+			<br>
+			<p>Y dentro del archivo metemos el siguiente codigo:
+				<pre>
+					Alias /owncloud "/var/www/owncloud/"
+					&#60;Directory /var/www/owncloud/&#62;
+					Options +FollowSymlinks
+					AllowOverride All
+					&#60;IfModule mod_dav.c&#62;
+					Dav off
+					&#60;&#47;IfModule&#62;
+					SetEnv HOME /var/www/owncloud
+					SetEnv HTTP_HOME /var/www/owncloud
+					&#60;/Directory&#62;</pre>
+			</p>
+			<img class="imagenes" src="../imagenes/ownCloud/owncloud2.png">
+			<br>
+			<p>Guardamos el documento y crearemos un link para habilitar el archivo y seguido reiniciaremos el apache
+				<pre>
+					ln -s /etc/apache2/sites-available/owncloud.conf /etc/apache2/sites-enabled/owncloud.conf
+					service apache2 restart</pre>
+			</p>
+			<img class="imagenes" src="../imagenes/ownCloud/owncloud3.png">
+			<br>
+			<p>Desde la terminal de proxmox de nuestro contenedor Ubuntu añadiremos los siguientes comandos:
+				<pre>
+					mkdir /var/www/html/owncloud
+					cd /var/www/html/owncloud
+					wget download.owncloud.org/community/owncloud-10.0.10.tar.bz2</pre>
+			</p>
+			<br>
+			<p>Con esto nos habremos descargado los archivos para instalar owncloud. Ahora toca descomprimirlo y prepararlo todo
+				para instalarlo</p>
+			<br>
+			<p>Descomprimimos el archivo:
+				<pre>bzip2 -dc owncloud-10.0.10.tar.bz2 |tar -xv para descomprimir el archivo que nos hemos descargado</pre>
+			</p>
+			<img class="imagenes" src="../imagenes/ownCloud/owncloud7.png">
+			<br>
+			<p>Para terminar con la instalacion, lo que haremos será darle permisos a todo. Para ello usamos el siguiente
+				comando y listo:
+				<pre> sudo chown -R www-data:www-data owncloud</pre>
+			</p>
+			<img class="imagenes" src="../imagenes/ownCloud/owncloud8.png">
+			<br>
+			<p>Ahora crearemos la base de datos donde ira todo guardado. Tambien le daremos un usuario y una base de datos para
+				la aplicacion y le damos permiso:
+				<pre>
+					mysql -u root
+					MariaDB [(none)]> CREATE DATABASE 'owncloud';
+					MariaDB [(none)]> CREATE USER 'owncloud'@'localhost' IDENTIFIED BY 'tucontraseña';
+					MariaDB [(none)]> GRANT ALL ON owncloud.* TO 'owncloud'@'localhost' IDENTIFIED BY 'tucontraseña';
+					MariaDB [(none)]> FLUSH PRIVILEGES;
+				</pre>
+			</p>
+			<br>
+			<p>Una vez terminado todo nos dirigimos a la IP del servidor y nos pedirá lo siguiente:
+				<pre>
+					owncloud
+					contraseña (de la base de datos)
+					owncloud
+					localhost
+				</pre>
+			</p>
+			<img class="imagenes" src="../imagenes/ownCloud/ownCloud-Install.png" alt="">
+			<br>
+			<p>Una vez introduzcamos todos los datos, el servidor owncloud estará listo, pero en caso de que no lo consiga, he
+				aqu un video ;)</p>
+			<br>
+
+			<video id="video" autobuffer autoloop loop controls>
+				<source src="../videos/owncloud.mp4">
+				<object type="video/ogg" data="../videos/owncloud.mp4">
+					<param name="src" value="../videos/owncloud.mp4">
+					<param name="autoplay" value="false">
+					<param name="autoStart" value="0">
+					<p><a href="../videos/owncloud.mp4">Download this video file.</a></p>
+				</object>
+			</video>
+		</article>
+	</div>
+</body>
+
+</html>

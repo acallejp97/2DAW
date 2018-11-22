@@ -1,0 +1,46 @@
+* {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+nav {
+  text-align: center;
+  color: white;
+  background-color: #333;
+}
+
+#titulo {
+  font-size: x-large;
+}
+
+img{
+  height: 15em;
+  width: 30em;
+}
+
+.galeria{
+  column-count: 3;
+  align-content: left;
+}

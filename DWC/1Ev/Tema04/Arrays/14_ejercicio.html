@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var array1 = new Array("Rojo", "Verde", "Azul");
+        var array2 = new Array("70", "9", "800");
+        var array3 = new Array(50, 10, 2, 300);
+        var array4 = new Array("70", "8", "850", 30, 10, 5, 400);
+
+        ordenarArray(array1);
+        ordenarArray(array2);
+        ordenarArray(array3);
+        ordenarArray(array4);
+
+        function ordenarArray(array) {
+            array.sort();
+            document.write("<br>");
+            for (var i = 0; i < array.length; i++) {
+                document.write(array[i] + " ");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

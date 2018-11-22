@@ -1,1 +1,0 @@
-/home/asier/Proyectos/Clase/DIW/web_adaptable_ejercicio_4/css/estilo_basico.css

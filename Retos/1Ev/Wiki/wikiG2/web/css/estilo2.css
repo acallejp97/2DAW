@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "letraGlobal";
+  src: url(../fuentes/roboto-v18-latin-regular.woff);
+  src: url(../fuentes/roboto-v18-latin-regular.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "letraGlobal";
+  margin: auto;
+  height: auto;
+  font-size: 1.75em;
+  min-height: 300px;
+  max-height: 900px;
+  background: rgb(240, 232, 205);
+}
+
+h1 {
+  text-align: center;
+  padding-top:1%;
+}
+
+h3{
+  padding-bottom:1%;
+}
+
+article {
+  text-align: justify;
+  padding: 3%;
+}
+
+img {
+  display: block;
+  width: 25%;
+  margin-right: 3%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  float: left;
+}
+
+#CAP {
+  margin-top: 20px;
+}
+
+#htmlvideo {
+  width: 100%;
+  height: 100%;
+}
+
+#bodyvideo {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+}

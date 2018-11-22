@@ -1,0 +1,25 @@
+Si es la primera vez que abrimos el repositorio: en la terminal escribimos 
+	git clone <link>
+
+Este creará la carpeta que esta en github en la carpeta que estamos en ese momento
+
+en ese momento hacemos 
+	cd wikiG2/
+
+Para guardar los datos que hemos creado:
+	git add .
+	git commit -m "comentario que queramos darle. Acordaros que luego cualquiera puede ver este comentario"
+	git push
+
+Si nos da el siguiente error:
+	fatal: refusing to merge unrelated histories
+
+Miramos que es lo que hay distinto entre nuestra carpeta y la que está en github.
+Si hay algo borrado que no esté en nuestra carpeta, tendremos que borrarlo antes de hacer el push
+hacemos 
+	git merge --allow-unreleated-histories
+En caso de que no deje hacer push probar git pull.
+
+miramos que hayamos solucionado las diferencias y hacemos 
+	git push
+
