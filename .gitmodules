@@ -7,3 +7,6 @@
 [submodule "Retos/1Ev/wikiG2"]
 	path = Retos/1Ev/wikiG2
 	url = https://github.com/acallejp97/wikiG2.git
+[submodule "Retos/1Ev/RetoBlogG1/RetoBlogG1"]
+	path = Retos/1Ev/RetoBlogG1/RetoBlogG1
+	url = https://github.com/acallejp97/RetoBlogG1.git
