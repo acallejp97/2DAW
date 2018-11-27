@@ -11,6 +11,10 @@
 |
  */
 
+Route::get('blade', function () {
+    return view('pruebapp');
+}); 
+
 Route::get('/', function () {
     return view('welcome');
 });
