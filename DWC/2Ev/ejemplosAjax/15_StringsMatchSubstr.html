@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>15.-Strings match substr</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >  Strings match substr       </h1>
+	<form id="form" method="post" >
+		campo de texto: <input type="text" id="campo_1">
+		<button id="btn">Validar </button>
+	</form>
+	<script type="text/javascript">
+	$(function(){
+		$("#btn").click(function(){
+			var valor=$("#campo_1").val();
+			if(!valor.match(/^\d+$/)){
+				alert("Error los datos nos son numeros");
+			}
+			else{
+				alert("Datos correxctos");
+			}
+
+		});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>insertBefore</title>
+  <style>
+  #foo {
+    background: yellow;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="div1">DIV</div>
+<p>Esto es un parrafo </p>
+<p>otro parrafo</p>
+ <button id="btn_1">Pulsa para insertBefore</button>
+ <button id="btn_2">Pulsa para before</button>
+<script>
+$(function(){
+	$("#btn_1").click(function(){
+		$( "p" ).insertBefore( "#div1" );//$(‘new content’).insertBefore(‘selector’)
+    $( "<div >nuevo</div>" ).insertBefore( "p" );
+	});
+	$('#btn_2').click(function(){
+		$('p').before("<div >2DWC</div>");//$(‘selector’).before(‘new content’)  insert html before la selección
+	})
+});
+
+</script>
+ 
+</body>
+</html>

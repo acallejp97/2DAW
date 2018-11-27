@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			var string=$("#texto").text()+ " HOLA MUNDO";
+			alert($("#texto").text());
+			$("#texto").text(string);
+			$("#html").html("<i>Texto en cursiva</i>");
+			$(".append").append(" Contenido que se añade");
+			$(".append").prepend('Esto lo pongo al principio---------');
+			$("#mitext").val('Agregamos contenido');
+		});
+	</script>
+</head>
+<body>
+	<div id="texto">Antes de</div>
+	<div id="html"></div>
+	<div class="append">Tengo esto l principio</div>
+	<input type="text" id="mitext"></input>
+	<br>
+	<p class="append">PARAFO nuevo</p>
+
+</body>
+</html>

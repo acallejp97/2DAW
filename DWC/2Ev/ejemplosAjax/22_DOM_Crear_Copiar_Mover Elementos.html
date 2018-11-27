@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>22 Crear Copiar Mover Borrar Elemetos</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >   Crear Copiar Mover Borrar Elementos      </h1>
+	<ol>
+		<li>Elemento 1</li>
+		<li>Elemento 2</li>
+		<li>Elemento 3</li>
+		<li>Elemento 4</li>
+		<li>Elemento 5</li>
+	</ol>
+	<button id="btn_1">Nuevo Elemento</button>
+	<button id="btn_2">Mueve el primero al final</button>
+	<button id="btn_3">Mueve el ultimo al principio</button>
+	<button id="btn_4">Copiar elemento</button>
+	<button id="btn_5">Borrar ultimo elemento</button>
+	<script type="text/javascript">
+	$(function(){
+		$("#btn_1").click(function(){
+			$('ol').append('<li>Nuevo Elemento</li>');//append agraga un nuevo elemento al final
+			$('ol').prepend('<li>Nuevo Elemento Principip</li>')//prepend agrega al principio
+		});
+		$("#btn_2").click(function(){
+			$('ol').append($('ol li:first'));//mueve el primer elemento y lo añade al final
+		});
+		$("#btn_3").click(function(){
+			$('ol').prepend($('ol li:last'));//mueve el ultimo elemento y lo añade al principio
+		});
+		$("#btn_4").click(function(){
+			var clon=$('ol li:last').text();
+			$('ol li:first').append(clon);//copia el elemento	
+		});
+		$("#btn_5").click(function(){
+			$('ol li:last').remove();//borra el ultimo	
+		});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>13.Manejo Cadenas Caracteres</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+</head>
+<body>
+	<h1 >Cadenas Caracteres</h1>
+	<br><br>
+	<div id="contenedor">Texto dentro del div con id Contenedor</div>
+	<button id="btn_length">Calcula el total de caracteres del contenedor</button>
+	<button id="btn_mayusculas">Convierte a mayusculas</button>
+	<button id="btn_minusculas">Convierte a minúsculas</button>
+	<div id="resultado"></div>
+	<script type="text/javascript">
+	$(function(){
+		//CADENAS DE CARATERES
+		$("#btn_length").click(function (){
+			var caracteres=$("#contenedor").text().length;
+			$("#resultado").text("La longitud de la cadena es "+ caracteres);
+		});
+		$("#btn_mayusculas").click(function(){
+			var mayusculas=$("#contenedor").text().toUpperCase();
+			$("#resultado").text(mayusculas);
+		});
+		$("#btn_minusculas").click(function(){
+			var minusculas=$("#contenedor").text().toLowerCase();
+			$("#resultado").text(minusculas);
+		});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Eventos keypress Keyup</title>
+    <link rel="stylesheet" href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#campo").keydown(function(event) {
+          $("#keydown_charcode").html(event.charCode);
+          $("#keydown_keyCode").html(event.keyCode);
+          $("#event_key").html(event.key);
+        });
+        $("#campo").keypress(function(event) {
+          //$('#resultado2').html(String.fromCharCode(event.charCode));
+
+          alert(event.which);
+          alert(String.fromCharCode(event.which));
+          if (String.fromCharCode(event.which).match(/\d/)) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Eventos KeyPress KeyUp</h2>
+    <input type="text" id="campo" value="" />
+    <h3>Keydown charCode</h3>
+    <div id="keydown_charcode"></div>
+    <p></p>
+    <p></p>
+    <h3>Valor decimal KeyCode</h3>
+    <div id="keydown_keyCode"></div>
+    <p></p>
+    <p></p>
+    <h3>Tecla pulsada event.key</h3>
+    <div id="event_key"></div>
+    <p></p>
+    <p></p>
+    <h3>Valor ASCII</h3>
+    <div id="valor_ascii"></div>
+  </body>
+</html>

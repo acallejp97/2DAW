@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>18 Arrays pop push shift unshift indexOf</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 > Arrays pop push shift unshift indexOf        </h1>
+	<div id="pop"></div>
+	<br><br>
+	<div id="push"></div>
+	<br><br>
+	<div id="shift"></div>
+	<br><br>
+	<div id="unshift"></div>
+	<br><br>
+	<div id="indexOf"></div>
+	<br><br>
+	<div id="join"></div>
+	<br><br>
+	<div id="split"></div>
+	<script type="text/javascript">
+	$(function(){
+		var lista = ["manzana","pera","naramja","melon"];
+		lista.pop();//Elimina el último elemento del array
+		$.grep(lista, function(valor,indice){
+			$("#pop").append("indece: "+ indice + " valor: " + valor +"<br/>")
+		});
+		
+
+		lista.push("melocoton");//añade un elemento al final
+		$.each(lista, function(indice, valor){
+			$("#push").append("indece: "+ indice + " valor: " + valor +"<br/>")
+		});	
+
+		lista.shift();//elimina el primer elemento del array
+		$.each(lista, function(indice, valor){
+			$("#shift").append("indece: "+ indice + " valor: " + valor +"<br/>")
+		});
+
+		lista.unshift('higo');//añade un elemento al principio del array
+		$.grep(lista, function(valor,indice){
+			$("#unshift").append("indece: "+ indice + " valor: " + valor +"<br/>")
+		});
+
+		var posicion=lista.indexOf('pera');//Nos indica la posición del parametro dentro del array si no la encuentra da -1
+		$("#indexOf").html("El elemento pera está en la posición <strong>"+ posicion +"</strong>");
+
+		var string_join=lista.join("--");//crea un string con los elementos del array separados por el parametro
+		$("#join").text(string_join);
+
+		var string = "uno dos tres cuatro";
+		var array = string.split(' ');
+		$.each(array, function(indice, valor){
+			$("#split").append("indece: "+ indice + " valor: " + valor +"<br/>")
+		});
+		});
+	</script>
+</body>
+</html>

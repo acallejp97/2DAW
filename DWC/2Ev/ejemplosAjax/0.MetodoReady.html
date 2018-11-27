@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>4.Metodo Ready</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+		/*$(function(){    //Forma recomendada en JQuery 3
+			alert("Hola el DOM está cargado\nForma recomendada");
+		});*/
+
+		/*$().ready(function(){
+			alert("Segunda Forma de cargar el DOM");
+		});*/
+		
+		$(document).ready(function(){
+			alert("Tercera forma de cargar el DOM")
+		});
+	</script>
+</head>
+<body>
+	<h1 class="saludo">Hola Jquery</h1>
+	<p id="parrafo">Esto es un parrafo</p>
+	<div>Esto es un div sin id</div>
+	
+</body>
+</html>

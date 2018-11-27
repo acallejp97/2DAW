@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX CArgando datos con POST</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 > AJAX CArgando datos con POST</h1>
+	
+	<form  method="post" >
+		Nombre: <input type="text" id="nombre" name="nombre"><br>
+		Apellidos: <input type="text" id="apellidos" name="apellidos" value="" >
+		<button type ="button" id="btn_2">Enviar parametros POST</button>
+	</form>
+	<div id="contenedor_2">123</div>
+	
+	<script type="text/javascript">
+	$(function(){
+		
+		$("#btn_2").on('click',function (){
+			var vnombre=$("#nombre").val();
+			var vapellidos=$("#apellidos").val();
+			$.post('AJAX_2_datos-post.php' , {nombre : vnombre, apellidos : vapellidos} , function (datos){
+				$("#contenedor_2").html(datos);
+			});
+		});
+	});
+		
+	</script>
+</body>
+</html>

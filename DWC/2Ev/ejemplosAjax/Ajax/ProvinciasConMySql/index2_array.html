@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Combos Anidados</title>
+	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			
+				//$("#comunidades").empty();
+				$.get('comunidades_array.php', function(datos){
+					console.log(datos);
+					alert(jQuery.type(datos));
+					alert(datos);
+					datos2=JSON.parse(datos);
+					//alert(jQuery.type(datos));
+					$.each(datos2,function(indice,valor){
+						//alert(valor[0]+"****"+valor[1]);
+						$("#comunidades").append('<option value="'+valor[0] +'">'+valor[1]+'</option>')
+					});
+					//alert(jQuery.type(datos));
+				});
+
+				$("#comunidades").on('change',function(){
+					if($("#comunidades").val()!=0){
+						$("#provincias").empty();
+						alert($(this).val())
+						var cod=$(this).val();
+						$.get('provincias_array.php',{id_com:cod},function(datos){
+							alert(jQuery.type(datos));
+							alert(datos);
+							datos2=JSON.parse(datos);
+							$.each(datos2,function(indice,valor){
+								$("#provincias").append('<option value="'+valor[0] +'">'+valor[1]+'</option>')
+							});
+						});
+					}
+					else{
+						alert("No has seleccionado Comunidad");
+					}
+					
+				});
+			
+		});
+	</script>
+</head>
+<body>
+	<h1>Prueba de combos anidados</h1>
+	<label>Comunidades</label>
+	<select id="comunidades">
+		<option value="">Selecciona una opción</option>}
+		option
+	</select>
+	<hr>
+	<label>Provincias</label>
+	<select id="provincias">
+		
+	</select>
+	<span id="#span"></span>
+</body>
+</html>

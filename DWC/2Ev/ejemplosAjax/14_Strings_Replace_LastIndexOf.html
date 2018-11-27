@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>14.Strings Replace LastIndexOf IndexOf</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+</head>
+<body>
+	<h1 >Strings Replace LastIndexOf IndexOf</h1>
+	<br><br><br>
+	<button id="btn_1">Reemplazar</button><br><br>
+	Buscar string en el contenedor:<input type="text" id="campo"></input>
+	<button id="btn_2">Buscar</button>
+	<div id="contenedor">Hola Txomin. Hola Ane. Con este texto vamos trabajar ahora</div>
+	
+	<script type="text/javascript">
+	$(function(){
+		//Strings REplace LastIndexOf
+		$("#btn_1").click(function(){
+			var string=$("#contenedor").text().replace(/hola/gi, 'KAIXO');
+			alert(string);
+			var string2=$("#contenedor").text().replace(/txomin|ane/gi,function (c){
+				return c.toUpperCase();
+			})
+			//$("#contenedor").text(string);
+			$("#contenedor").html("<br>"+string+"<br/>"+string2);
+		});
+		$("#btn_2").click(function (){
+			var string=$("#campo").val();
+			var posicion=$("#contenedor").text().indexOf(string);//Usando LastIndexOf busca de derecha a izquierda
+			if (posicion >= 0){
+				alert(string+" Encontrada en la posicion "+posicion);
+			}
+			else{
+				alert(string + " NO ha sido encontrado");
+			}
+		});
+		});
+	</script>
+</body>
+</html>

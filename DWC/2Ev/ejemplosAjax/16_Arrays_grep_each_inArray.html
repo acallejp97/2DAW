@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>16. Arrays grep each inArray</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >  Arrays grep each inArray       </h1>
+	<div id="array_1"></div>
+	<ul id="lista">
+		<li>item1</li>
+		<li>item2</li>
+		<li>item3</li>
+		<li>item4</li>
+		<li>item5</li>
+	</ul>
+	<div id="array_2"></div>
+	<br/>
+	<div id="array_3"></div>
+	<script type="text/javascript">
+	$(function(){
+		var array_1=["uno","dos","tres","cuatro","cinco","seis","siete"];
+
+		$.grep(array_1, function(value, index){//grep filtra usando la funcion value->elemento del array, index->indice en el array
+			$("#array_1").append("Index: "+index+" value "+value+"<br/>")
+		});
+		
+		$("#lista li").each(function(index){//iteramos todos los elementos de la lista
+			$("#array_2").append('indiceLista: '+index+" valor: "+$(this).text()+"<br/>");
+		});
+
+		var array_3=['txomin','ane','bartol']
+		$.each(array_3, function (index,value){//recorremos el array y obtenemos el indice y el valor
+			$("#array_3").append("indiceArray3: "+index+" valor: "+value+"<br/>");
+		});
+
+		var array_4 = ["azul" , "verde" , "rojo" , "blanco"];
+		var color = "rojo";
+		if ($.inArray(color,array_4) > -1){//Busca un valor especificado dentro de una matriz y devuelve su índice (o -1 si no se encuentra).
+			alert("El color "+ color+ " ha sido encontrado");
+		}
+		else{
+			alert("El color "+ color+ " NO ha sido encontrado");
+		}
+		});
+	</script>
+</body>
+</html>

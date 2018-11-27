@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>9.Efectos y animacions. Animate</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type="text/css">
+		#contenedor{
+			position: relative;
+			width: 250px;
+			height: 250px;
+			background: black;
+			border-radius: 50%;
+		}
+	</style>
+	<script type="text/javascript">
+	$(function(){
+		$("#btn_1").click(function(){
+			if ($(this).val() == "horizontal"){
+				$(this).val("Animacion en progreso");
+				$(this).prop("disabled",true);
+				$('#contenedor').animate({left : "+=300"}, 5000, "swing").animate({left : "-=100"}, 1000).animate({top: "+=50"},3000,function (){
+						$("#btn_1").val("horizontal");
+						$("#btn_1").prop("disabled",false);
+				} );				 
+			}
+		});
+		
+		});
+	</script>
+</head>
+<body>
+	<input type="button" id="btn_1" value="horizontal">
+	<h1 >Animaciones</h1>
+	
+	<div id="contenedor"></div>
+	
+</body>
+</html>

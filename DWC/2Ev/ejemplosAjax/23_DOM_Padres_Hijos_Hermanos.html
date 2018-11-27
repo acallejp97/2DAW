@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>23 DOM Padres hijos hermanos</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >  23 DOM Padres hijos hermanos       </h1>
+	<ol id="padre_ol">
+		<li>Elemento 1</li>
+		<li class="hijo">Elemento 2</li>
+		<li>Elemento 3</li>
+		<li>Elemento 4</li>
+		<li>Elemento 5</li>
+	</ol>
+	<div id="resultado"></div>
+	<script type="text/javascript">
+	$(function(){
+		var hijos=$("#padre_ol").children();
+		
+		console.log(hijos);//nos devuelve un objeto con todos los li
+		
+		for (hijo of hijos){//recorro el objeto y muestro el textContent
+			$("#resultado").append(hijo.textContent+"<br>")
+			console.log(hijo.textContent);
+		}
+		var hijosTexto=$("#padre_ol").children().text();//así tambien selecciono el texto
+		console.log(hijosTexto);
+
+		var padre=$('.hijo').parent();
+		console.log(padre);
+		var hermanos=$('.hijo').siblings().text();
+		console.log(hermanos);
+	});
+	</script>
+</body>
+</html>

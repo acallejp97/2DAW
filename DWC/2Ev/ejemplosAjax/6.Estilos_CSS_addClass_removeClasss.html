@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>6.Manejo Clases addClass removeClass</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type="text/css">
+		.rojo{
+			background-color: red;
+			text-align: center;
+		}
+		.azul{
+			background-color: blue;
+			text-align: left;
+			color: white;
+		}
+		.verde{
+			border : 3px green solid;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="saludo">Hola Jquery</h1>
+	<p id="parrafo" class="rojo">Esto es un parrafo</p>
+	<div>Esto es un div sin id</div>
+	<div>Otro div</div>
+	<script type="text/javascript">
+	$(function(){
+		//Clases CSS, hasClass removeClass
+		$('.saludo').css({'background-color':'red','text-align':'center'});
+		if ($('#parrafo').hasClass('rojo')){
+			alert("Tiene la clase rojo");
+			$('#parrafo').removeClass('rojo');
+			$('#parrafo').addClass('azul verde')
+		}
+	});
+	</script>
+</body>
+</html>

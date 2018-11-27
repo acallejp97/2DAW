@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >   CARga de alumnos con JSONm     </h1>
+	<button id="btn">Cargar alumnos JSON</button>
+	<div id="respuesta"></div>
+	<div id="json">
+		<h2>LO METO CON $.each</h2>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$("#btn").on('click', function(){
+			$.getJSON("alumnos.json", function (datos){
+				var colegio = datos.alumnos.colegio;
+				var ciudad = datos.alumnos.ciudad;
+				var clase1 = datos.alumnos.clase1;
+				var clase2 = datos.alumnos.clase2;
+
+				$("#respuesta").append("<h1>"+ colegio +"</h1>");
+				$("#respuesta").append("<h1>"+ ciudad +"</h1>");
+				$("#respuesta").append("<h3>Clase 1</h3>");
+				for(i=0;i<clase1.length; i++){
+					$("#respuesta").append(" Alumno: "+clase1[i][0] + " Nota: "+ clase1[i][1]+"<br/>");
+				}
+
+				$("#respuesta").append("<h3>Clase 2</h3>");
+				for(i=0;i<clase2.length; i++){
+					$("#respuesta").append(" Alumno: "+clase2[i][0] + " Nota: "+ clase2[i][1]+"<br/>");
+				}
+
+				
+				$.each(clase2,function(indice, valor){
+					alert(valor);
+					$.each(valor, function(i2, value){
+						switch (i2) {
+							case 0:
+								$("#json").append("alumn: "+value);
+								break;
+							case 1:
+								$("#json").append(" nota: "+value+"<br>");
+						}
+						
+					})
+					
+				})
+
+
+			});
+
+		});	
+	});
+	</script>
+</body>
+</html>

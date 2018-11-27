@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="spin.min.js"></script>
+	</head>
+<body>
+	<h1 >         </h1>
+	<script type="text/javascript">
+	$(function(){	
+		$("#btn_2").on('click',function (){
+			var vnombre=$("#nombre").val();
+			var vapellidos=$("#apellidos").val();
+			var archivo="AJAX_2_datos-post.php";
+			alert($("form").serialize());
+			
+				$.ajax({
+				beforeSend: function(){	
+					alert("Esto ocurre dsf");
+				},
+				url: archivo,
+				type: "POST",
+				data: $("form").serialize(),
+				success: function(datos){//en datos tengo lo que recibo
+					$("#contenedor2").append(datos);
+				},
+				error: function (jqXHR,estado, error){//estado->timeout(se acabó el tiempo), error(notfound, internaleror..), abort, parseerror
+					console.log(estado);
+					console.log("error: "+error);
+				},
+				complete: function (jqXHR, estado){//se ejecuta haya sido la conexión correcta o no
+					console.log("complete: "+estado);
+				}
+			})
+		});
+
+	});
+	</script>
+	<form  method="post" >
+		Nombre: <input type="text" id="nombre" name="nombre"><br>
+		Apellidos: <input type="text" id="apellidos" name="apellidos" value="" >
+		<button type ="button" id="btn_2">Enviar parametros POST</button>
+		
+		<div id="contenedor2">
+			<h2>Contenedor 2</h2>
+		</div>
+	</form>
+</body>
+</html>

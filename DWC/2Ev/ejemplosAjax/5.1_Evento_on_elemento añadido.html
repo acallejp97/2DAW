@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>22 Evento on click elemento nuevo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Evento on click elemento nuevo</h1>
+    <ol id="listado">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+      <li>Elemento 5</li>
+    </ol>
+    <button id="btn">Nuevo Elemento</button>
+
+    <script type="text/javascript">
+      $(function() {
+        $("#btn").click(function() {
+          $("ol").append("<li>Elemento Nuevo</li>"); //append agraga un nuevo elemento al final
+        });
+
+        $("#listado").on("click", "li", function() {
+          alert("li pulsado");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EVENTOS click,mouseover,mouseout,focus,blur</title>
+	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			$('#btn_mostrar').click(function() {
+				$('#mensaje').text('Mostrando mensaje')
+			});
+			$('#btn_ocultar').click(function() {
+				$('#mensaje').text('');
+			});
+			$('#btn').mouseover(function() {
+				$(this).val("Estás encima");
+			});
+			$('#btn').mouseout(function() {
+				$(this).val('Pasa por encima de mi');
+			});
+			$('#campo').focus(function() {
+				$('#resultado').text('El campo de texto tiene el foco');
+			});
+			$('#campo').blur(function(){
+				$('#resultado').html("El campo de texto ha perdido el foco");
+			})
+		});
+	</script>
+</head>
+<body>
+	<input type="button" id="btn_mostrar" value="mostrar mensaje"></input>
+	<input type="button" id="btn_ocultar" value="Ocultar mensaje"></input>
+	<div id="mensaje"></div>
+	<p></p>
+	<input type="button" id="btn" value="Pasa por encima de mi">
+	<p></p>
+	<input type="text" id="campo" value="">
+	<div id="resultado"></div>
+
+
+</body>
+</html>

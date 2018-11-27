@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>21 Crear funcion simple</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >    Crear funcion simple     </h1>
+	<div id="contenedor"></div>
+	<script type="text/javascript">
+	$.mensaje = function (saluda = "Hola mundo"){
+		return saluda;
+	}
+	$(function(){
+		$("#contenedor").text($.mensaje('CaraCOLA'));
+		});
+	</script>
+</body>
+</html>

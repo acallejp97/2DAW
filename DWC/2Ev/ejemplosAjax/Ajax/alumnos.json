@@ -1,0 +1,18 @@
+{"alumnos":
+{
+"colegio" : "CIFP TXurdinaga LHII",
+"ciudad" : "Bilbao",
+"clase1" :
+	[
+		["Txomin", 5],
+		["Ane", 6],
+		["Bartol", 7]
+	],
+"clase2" : 
+	[
+		["Rosa",8],
+		["Perico", 9],
+		["GOrka",7]
+	]
+}
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>19 _Manipular atributos</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+<body>
+	<h1 >19 _Manipular atributos         </h1>
+	<div id="contenedor" style="width:100px; height:100px; background: black"></div>
+	<button id="btn_1">Mostrar atributos</button>
+	<button id="btn_2">CAmbiar estilo</button>
+	<button id="btn_3">Eliminar atributo style</button>
+	<br>
+	<div id="resultado"></div>
+	<script type="text/javascript">
+	$(function(){
+		$("#btn_1").click(function(){
+			var id=$("#contenedor").attr("id");//cojemos los atributos getter
+			var style=$("#contenedor").attr('style');
+			$("#resultado").html("id: "+ id + " <br> style: "+ style );
+		});
+		$("#btn_2").click(function(){
+			$("#contenedor").attr('style', 'width:150px; height: 150px; background:blue');
+		});
+		$("#btn_3").click(function(){
+			$("#contenedor").removeAttr('style');
+		})
+		});
+	</script>
+</body>
+</html>
