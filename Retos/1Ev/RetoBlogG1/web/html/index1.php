@@ -34,9 +34,18 @@ if (isset($_SESSION)) {
 </head>
 
 <body>
+<<<<<<< HEAD
+    <article>
+        <aside id="aside" onload ="ocultarAside()">
+=======
 	<article>
         <aside id="aside" onload="ocultarAside();">
+<<<<<<< HEAD
+>>>>>>> 039806ac2e183061f69f9b25a428d60afd4547ab
+            <h1>Criterio de busqueda</h1>
+=======
             <h2>Criterio de busqueda</h2>
+>>>>>>> 572456270d0f19fecdc3cb6f22380b6aa821ab44
             <p>
                 <form action="BuscarCustom.php" method="POST">
                     <label>Fecha<label><input type="date" name="fecha" />
@@ -105,6 +114,25 @@ if (isset($_SESSION["listaArticulos"])) {
 ?>
 
 	</section>
+<<<<<<< HEAD
+	<script>
+		function validarInicio() {
+			var usuario = document.getElementById("usuario").value;
+			var passwd = document.getElementById("password").value;
+
+			if (passwd == "?" && usuario == "?") {
+				return true;
+			} else {
+				return console.log(false);
+			}
+		}
+	function ocultarAside(){
+		document.getElementById("aside").disabled=true;
+	}
+
+	</script>
+=======
+>>>>>>> 572456270d0f19fecdc3cb6f22380b6aa821ab44
 
 	<footer>
 	<a href="#aside" class="up-button"><img src="imagenes/menu-button.png"></a>
