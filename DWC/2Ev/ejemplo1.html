@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>22 Evento on click elemento nuevo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type='text/css'> 
+		#turnkey-credit{ 
+			font-family: Tahoma,Sans,Arial,Helvetica,Verdana,sans-serif; 
+			font-size: 11px; 
+			text-align: center; 
+		} 
+		#turnkey-credit a { 
+			text-decoration: none; 
+		} 
+		#turnkey-credit a:hover { 
+			text-decoration: underline; 
+		} 
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Evento on click elemento nuevo</h1>
+	</header><!-- /header -->
+	<script>
+		$(function(){
+			$('#btn1').click(function(){
+				$('ul').append("<li>Nuevo elemento</li>");
+			});
+			$('#lista').on('click','li',function(e){
+				alert($(e.target).index()+1+ " elemento de la lista.");
+			});
+		});
+	</script>
+	<section>
+		<ol id="lista">
+			<li>Elemento 1</li>
+			<li>Elemento 2</li>
+			<li>Elemento 3</li>
+			<li>Elemento 4</li>
+			<li>Elemento 5</li>
+		</ol>
+		<button id="btn1">Nuevo Elemento</button>
+	</section>
+	<footer>
+		<h3>Vanesa Gil Andrés</h3>
+	</footer>
+</body>
+</html>
