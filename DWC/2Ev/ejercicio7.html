@@ -2,30 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>ejercicio 5</title>
+    <title>ejercicio 7</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
-    <header><h1>Ejercicio 5</h1></header>
+    <header><h1>Ejercicio 7</h1></header>
     <section>
-      <ul>
-        Lista 1:
-        <li>Tortilla</li>
-        <li>Jamón</li>
-        <li>Queso</li>
-      </ul>
-      <ul>
-        Lista 2:
-        <li>Coca Cola</li>
-        <li>Leche</li>
-        <li>Té</li>
-      </ul>
+      <a href="http://www.google.com">Enlace 1</a>
+      <a href="http://www.google.com">Enlace 2</a>
       <button id="ocultar" value="ocultar">Ocultar</button>
     </section>
     <script>
       $(function() {
         $("#ocultar").click(function() {
-          $("li:first").hide();
+          $("a").hide();
         });
       });
     </script>

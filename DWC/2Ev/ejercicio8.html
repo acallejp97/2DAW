@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header><h1>Ejercicio 8</h1></header>
+    <section>
+      <a href="http://www.google.com" target="_blank">Enlace 1</a> <br />
+      <a href="http://www.google.com">Enlace 2</a> <br />
+      <button id="btn1" value="ocultar">Ocultar enlace 1</button>
+      <button id="btn2" value="ocultar">Ocultar enlace 2</button>
+    </section>
+    <script>
+      $(function() {
+        $("#btn1").click(function() {
+          $("a[target=_blank]").hide();
+        });
+        $("#btn2").click(function() {
+          $("a").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

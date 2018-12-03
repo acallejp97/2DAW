@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio 13</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header><h1>Ejercicio 13</h1></header>
+    <section>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        repudiandae, molestias accusantium omnis maiores accusamus expedita
+        deleniti harum dolorem pariatur delectus fuga vel nostrum beatae ea
+        corporis ipsum et debitis!
+      </p>
+    </section>
+    <script>
+      $("p").hover(function() {
+        $("p").mouseenter(function() {
+          alert("Ha entrado en el parrafo");
+        });
+        $("p").mouseleave(function() {
+          alert("Ha salido del parrafo");
+        });
+      });
+    </script>
+  </body>
+</html>
