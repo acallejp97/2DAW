@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -29,4 +29,4 @@ class CreatePasswordResetsTable extends Migration
     {
         Schema::dropIfExists('password_resets');
     }
-}
+} ?>-->

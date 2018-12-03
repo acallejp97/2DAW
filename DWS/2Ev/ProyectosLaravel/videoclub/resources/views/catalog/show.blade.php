@@ -14,4 +14,6 @@
     {{-- TODO: Datos de la película --}}
 
 </div>
-</div>@stop
+</div>
+
+@stop
