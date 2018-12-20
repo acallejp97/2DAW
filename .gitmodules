@@ -7,3 +7,6 @@
 [submodule "Retos/1Ev/wiki2G2"]
 	path = Retos/1Ev/wiki2G2
 	url = https://github.com/acallejp97/wiki2G2.git
+[submodule "Retos/2Ev/BolsaDeTrabajo"]
+	path = Retos/2Ev/BolsaDeTrabajo
+	url = https://github.com/acallejp97/BolsaDeTrabajo.git
