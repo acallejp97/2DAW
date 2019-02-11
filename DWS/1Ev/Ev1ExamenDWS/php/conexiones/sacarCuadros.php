@@ -2,14 +2,14 @@
 
 include RAIZ_APLICACION . "/conexion/Conexion.php";
 
-$numeroCuadros=numeroCuadros();
-for($cuadro=1;$cuadro<=$numeroCuadros;$cuadro++){
+$numeroCuadros = numeroCuadros();
+for ($cuadro = 1; $cuadro <= $numeroCuadros; $cuadro++) {
     ?>
     <div class="imagen">
-        <img src='../html/imagenes/<?php echo foto($cuadro)?>'>
+        <img src='../html/imagenes/<?php echo foto($cuadro) ?>'>
         <div>
-            <a strong><?php echo nombre($cuadro)?></a><br />
-            <a>Autor: <?php echo autor($cuadro)?></a>
+            <a strong><?php echo nombre($cuadro) ?></a><br />
+            <a>Autor: <?php echo autor($cuadro) ?></a>
         </div>
     </div>
 
@@ -50,7 +50,7 @@ function autor($numeroCuadro)
     $db = Conexion::getInstance();
     $numeroAutor = $db->query($sqlSelectNumeroAutor);
     $idAutor = $numeroAutor->fetch();
-    $sqlSelectNombreAutor = "SELECT nom_autor FROM autor WHERE cod_autor = " . $idAutor[0];;
+    $sqlSelectNombreAutor = "SELECT nom_autor FROM autor WHERE cod_autor = " . $idAutor[0];
     $nombreAutor = $db->query($sqlSelectNombreAutor);
     $autor = $nombreAutor->fetch();
     return $autor[0];

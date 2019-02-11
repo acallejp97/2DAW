@@ -18,21 +18,21 @@ define('RAIZ_APLICACION', dirname(__FILE__));
       <ul>
         <li><a href="../index.php">Inicio</a></li>
         <li><a href="galeria.php">Galeria</a></li>
-        <?php if (isset($_SESSION["usuario"])){?>
+        <?php if (isset($_SESSION["usuario"])) {?>
           <li><a href="cerrarsesion.php">Cerrar Sesion</a></li>
           <li><a href="bajas.php">Bajas</a></li>
-        <?php }else{?>
+        <?php } else {?>
         <li><a href="iniciarsesion.php">Iniciar Sesion</a></li>
-      <?php } ?>
+      <?php }?>
       </ul>
     </header>
     <nav><p id="titulo">NUESTRAS OBRAS DE ARTE</p></nav>
     <div  class="galeria">
-<?php 
+<?php
 include RAIZ_APLICACION . "/conexiones/sacarCuadros.php"
 
 ?>
     </div>
-    
+
   </body>
 </html>

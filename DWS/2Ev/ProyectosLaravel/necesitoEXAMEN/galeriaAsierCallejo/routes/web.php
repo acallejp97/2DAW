@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+Route::get('/', 'Controller@inicio')->name('home');
+
+Auth::routes();
+Route::get('/logout', 'HomeController@logout');
+
+Route::get('/galeria', 'Controller@mostrarGaleria')->name('galeria');
+Route::get('/crear', 'Controller@crearCuadro')->name('crear');
+Route::post('/subirCuadro', 'Controller@subirCuadro')->name('subirCuadro');
