@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Examen Vuejs</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #dddddd;
+        padding: 8px;
+        width: 30%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <table>
+        <tr>
+          TABLA DE TAREAS
+        </tr>
+        <tr>
+          <th>
+            Titulo
+          </th>
+          <th>
+            Responsable
+          </th>
+          <th>
+            Prioridad
+          </th>
+        </tr>
+        <tr v-for="(tarea,index) in tareas">
+          <td>
+            {{ tarea.titulo }}
+          </td>
+          <td>
+            {{ tarea.responsable }}
+          </td>
+          <td>
+            {{ tarea.prioridad }}
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        Valores nueva tarea, La prioridad es estre 1 y 3
+      </p>
+      <br />
+      <form v-on:submit.prevent="agregarTarea">
+        <label>Nombre</label>
+        <input type="text" placeholder="Nombre" v-model="nombre" />
+        <label>Responsable</label>
+        <input type="text" placeholder="Responsable" v-model="responsable" />
+        <label>Prioridad</label>
+        <input type="text" placeholder="Prioridad" v-model="prioridad" />
+        <input type="submit" value="Añadir" />
+      </form>
+
+      <ul>
+        <li v-for="tarea in prioridades">
+          {{ tarea.prioridad }}: {{ tarea.titulo }}
+        </li>
+        <input type="range" min="1" max="3" v-model="minimo" />
+      </ul>
+    </main>
+
+    <script src="js/vue.js"></script>
+    <script src="js/exa_vue.js"></script>
+  </body>
+</html>

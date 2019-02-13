@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .rojo {
+        background-color: red;
+      }
+      .texto {
+        color: blue;
+        text-align: center;
+      }
+    </style>
+
+    <!-- Importación de la librería de jquery. -->
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      $("document").ready(function() {
+        $.get("categorias.php", function(datos) {
+          datos2 = JSON.parse(datos);
+          $.each(datos2, function(indice, valor) {
+            $("#articulos").append(
+              '<option value="' +
+                valor["codigo"] +
+                '">' +
+                valor["descripcion"] +
+                "</option>"
+            );
+          });
+        });
+
+        $("#articulos").on("change", function() {
+          if ($("#articulos").val() != 0) {
+            $("#seleccion").empty();
+            var id_codigo = $(this).val();
+            $.get("buscar_categoria.php", { cod: id_codigo }, function(datos) {
+              datos2 = JSON.parse(datos);
+              $("#seleccion").append(
+                '<h2>RESULTADOS</h2><table id="tabla" border="1"><th>Marca</th><th>Modelo</th><th>Precio</th></table>'
+              );
+              $.each(datos2, function(indice, valor) {
+                $("#tabla").append(
+                  '<tr class="fondotabla texto">' +
+                    "<td>" +
+                    valor["marca"] +
+                    "</td>" +
+                    "<td>" +
+                    valor["modelo"] +
+                    "</td>" +
+                    "<td>" +
+                    valor["precio"] +
+                    "</td>" +
+                    "</tr>"
+                );
+              });
+            });
+          } else {
+            alert("No has seleccionado categoria");
+            $("#seleccion").empty();
+          }
+        });
+
+        $(".fondotabla").mouseover(function() {
+          $(this).addClass("rojo");
+        });
+
+        $("fondotabla").mouseout(function() {
+          $(this).removeClass("rojo");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>SELECCION DE CATEGORÍA</h1>
+    <label>Categorias </label>
+    <select id="articulos">
+      <option value="">Selecciona un artículo</option>
+    </select>
+    <hr />
+    <div id="seleccion"></div>
+  </body>
+</html>
